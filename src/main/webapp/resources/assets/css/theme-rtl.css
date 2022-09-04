@@ -9889,7 +9889,7 @@ textarea.form-control-lg {
 }
 
 .bg-light {
-  background-color: #F5F2FC !important;
+  background-color: #e8eaf6 !important;
 }
 
 .bg-dark {
@@ -19903,6 +19903,7 @@ section {
     padding-top: 7.5rem;
     padding-bottom: 7.5rem;
   }
+  
 }
 
 input,
@@ -22081,4 +22082,6 @@ iframe.yt-video.loaded {
   transform: translate(50%, -50%);
   text-align: center;
 }
+
+
 /*# sourceMappingURL=theme-rtl.css.map */

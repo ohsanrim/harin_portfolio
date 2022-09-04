@@ -43,6 +43,23 @@
 	.bg-10000 h2, .bg-10000 .text-5000 {
 		color: #e8eaf6
 	}
+	.main_image {
+		width: 50%;
+	    height: 100%;
+	    position: absolute;
+	    display: none;
+    	justify-content: center;
+	}
+	
+	@media all and (min-width: 960px) {
+	  .main_image {
+			width: 50%;
+		    height: 100%;
+		    position: absolute;
+		    display: flex;
+	    	justify-content: center;
+		}
+	}
 	
 	</style>
   </head>
@@ -58,20 +75,25 @@
     <main class="main" id="top">
       
       <section class="py-7 py-lg-10" id="home">
-        <div class="bg-holder bg-size" style="background-image:url(<%=request.getContextPath()%>/resources/assets/img/illustration/2.png);background-position:left top;background-size:contain;">
+        <%-- <div class="bg-holder bg-size" style="background-image:url(<%=request.getContextPath()%>/resources/assets/img/illustration/2.png);background-position:left top;background-size:contain;"> --%>
+        <div class="bg-holder bg-size" style="background-position:left top;background-size:contain;">
         </div>
         <!--/.bg-holder-->
-
-        <div class="bg-holder d-none d-xxl-block hero-bg" style="background-image:url(<%=request.getContextPath()%>/resources/assets/img/illustration/1.png);background-position:right top;background-size:contain;">
+<%-- <div class="bg-holder d-none d-xxl-block hero-bg" style="background-image:url(<%=request.getContextPath()%>/resources/assets/img/illustration/1.png);background-position:right top;background-size:contain;"> --%>
+        <div class="bg-holder d-none d-xxl-block hero-bg" style="background-position:right top;background-size:contain;">
         </div>
         <!--/.bg-holder-->
 
         <div class="container">
-          <div class="row align-items-center h-100 justify-content-center justify-content-lg-start">
+          <div class="main_image">
+          	<img src="<%=request.getContextPath()%>/resources/assets/img/profile.jpg" style="height:100%; border-radius: 50%;" />
+          </div>
+          <div class="row align-items-center h-100 justify-content-center justify-content-lg-end">
+          	
             <div class="col-md-9 col-xxl-5 text-md-start text-center py-6 pt-8">
-              <h1 class="fs-4 fs-md-5 fs-xxl-4" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">Balance agility with stability</h1>
-              <p class="fs-1" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">Gohub monitors application stability, so you can make data-driven decision on whether you should be building new features, or fixing bugs. </p>
-              <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start mt-5" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll"><a class="btn btn-sm btn-primary me-1" href="#!" role="button">Get started</a><a class="btn btn-sm btn-default" href="#" role="button">Questions? Talk to our team<i class="fas fa-arrow-right ms-2"></i></a></div>
+              <h1 class="fs-4 fs-md-5 fs-xxl-4" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">Hello!</h1>
+              <p class="fs-1" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">부족한 점을 항상 배우려 노력하는<span id="point">"꾸준함"</span> 뿐만이 아닌, 항상 끊임없이 새로운 것을 배우고 경험하고자 하는 <span id="point">"만능 에너자이저" 개발자</span> 곽하린 입니다.</p>
+              <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start mt-5" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll"><a class="btn btn-sm btn-primary me-1" href="#!" role="button">Get started</a><a class="btn btn-sm btn-default" href="#" role="button">Questions? Contract Me!<i class="fas fa-arrow-right ms-2"></i></a></div>
             </div>
           </div>
         </div>
@@ -308,33 +330,6 @@
         </div>
       </section>
 
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="bg-200" id="cta">
-
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <h2 class="fw-bold text-black">Ready to get started?</h2>
-              <p>Get an guided demo with an OKR expert.</p>
-            </div>
-            <div class="col-lg-6 h-100">
-              <div class="input-group">
-                <input class="form-control" type="text" placeholder="Email Address" />
-                <button class="btn btn-primary rounded-start-0 px-3" type="submit">Get Started</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-      
     </main>
     
     <%@ include file="../footer.jsp" %>
@@ -342,18 +337,14 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="<%=request.getContextPath()%>/resources/vendors/popper/popper.min.js"></script>
+   
     <script src="<%=request.getContextPath()%>/resources/vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="<%=request.getContextPath()%>/resources/vendors/anchorjs/anchor.min.js"></script>
+    
     <script src="<%=request.getContextPath()%>/resources/vendors/is/is.min.js"></script>
     <script src="<%=request.getContextPath()%>/resources/vendors/fontawesome/all.min.js"></script>
     <script src="<%=request.getContextPath()%>/resources/vendors/lodash/lodash.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
-    <script src="<%=request.getContextPath()%>/resources/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="<%=request.getContextPath()%>/resources/vendors/gsap/gsap.min.js"></script>
     <script src="<%=request.getContextPath()%>/resources/vendors/gsap/customEase.js"></script>
-    <script src="<%=request.getContextPath()%>/resources/vendors/gsap/scrollToPlugin.js"></script>
-    <!--script(src=`${CWD}<%=request.getContextPath()%>/resources/vendors/gsap/drawSVGPlugin.js`)-->
     <script src="<%=request.getContextPath()%>/resources/assets/js/theme.js"></script>
     <script>
     	window.onload = function(){

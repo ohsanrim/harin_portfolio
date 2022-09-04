@@ -17,7 +17,10 @@
 		background-color:#ffeb3b;
 		border-radius:90px; 
 		margin-right: 10px;
+		
 	}
+	
+	
 </style>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="light">
   <div class="container">
