@@ -11,14 +11,20 @@
 	    cursor: pointer;
 	    text-decoration: none;
 	}
-	
+	.circle_logo {
+		width:15px; 
+		height:15px; 
+		background-color:#ffeb3b;
+		border-radius:90px; 
+		margin-right: 10px;
+	}
 </style>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="light">
   <div class="container">
   	
  	<div class="header_logo">
- 		<div style="circle_logo">
- 			<div style="width:15px; height:15px; background-color:black;border-radius:90px; margin-right: 10px;"></div>
+ 		<div style="">
+ 			<div class="circle_logo" style=""></div>
  		</div>
  		<div style="margin-right:20px; color:black; font-size: 20px;">
  			<div class="logo_name_a" onclick="javascript:location.href='<%=request.getContextPath()%>/'">Harin Kwak</div>
