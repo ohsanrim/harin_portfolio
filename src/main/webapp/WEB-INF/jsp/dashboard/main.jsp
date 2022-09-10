@@ -35,7 +35,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700&amp;family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&amp;display=swap" rel="stylesheet">
     <link href="<%=request.getContextPath()%>/resources/assets/css/theme.css" rel="stylesheet" />
     <link href="<%=request.getContextPath()%>/resources/assets/css/user.css" rel="stylesheet" />
+    
+    <!--font-family: 'Black Han Sans', sans-serif;-->
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <!--font-family: 'Noto Sans KR', sans-serif;-->
+
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/assets/css/portfolio.css">
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
+    <script src="<%=request.getContextPath()%>/resources/assets/js/portfolio.js"></script>
 	<style>
+	
 	
 	.bg-10000 {
    		background-color: #9499b7 !important;
@@ -169,122 +182,98 @@
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
-      <section id="pricing">
-
-        <div class="container">
-          <div class="row flex-center">
-            <div class="col-md-6 text-center text-md-start">
-              <h4 class="fw-normal fs-3" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">Your safety is always <br />a top priority</h4>
-              <p class="fs-0 pe-xl-8" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">We are committed to help drivers and riders get where they want to go with confidence</p>
-              <div class="d-flex justify-content-space-between align-item-center my-3 mt-2">
-                <div>
-                  <h4 class="fw-normal fs-1">Drive</h4>
-                  <p class="my-1 fs-0 pe-xl-8">Drive when you want. Find ooprtunities around you.</p>
-                </div>
-                <div>
-                  <h4 class="fw-normal fs-1">Ride</h4>
-                  <p class="my-1 fs-0 pe-xl-8">Tap your phone. Get where you're headed</p>
-                </div>
-              </div>
-              <button class="btn btn-sm btn-primary my-4 me-1" href="#!" role="button">Get started</button><a class="btn btn-sm my-2 btn-default" href="#" role="button">Questions? Talk to our team<i class="fas fa-arrow-right ms-2"></i></a>
-            </div>
-            <div class="col-md-6 mb-4"><img class="w-100" src="<%=request.getContextPath()%>/resources/assets/img/illustration/4.png" alt="..." /></div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
+      <section id="work1">
+      	<div class="container">
+			<!--        work-->
+	        <div>
+	          <div class="work1_wrapper">
+	            <div class="work_info" id="slideLeft">
+	              <div class="work_header">
+	                <h1>"Cookie Run" Project</h1>
+	              </div>
+	              <div class="work_skills">
+	                <div class="skill_design">java</div>
+	                <div class="skill_design">Oracle</div>
+	              </div>
+	              <div class="work_ex" >
+	                모바일 게임인 쿠키런을 PC 버전의 1대1 매칭 시스템으로 구현한 “쿠키런”프로젝트.<br>
+	                - 대기실 네트워크 쪽과 게임 구현.<br>
+	                - 멀티 스레드를 통해 게임의 프레임을 여러가지로 나누어서 동시 진행이 되도록 구현.<br>
+	                - 웹 소켓을 활용하여 실시간으로 대전중인 상대방의 점수를 확인할 수 있게 구현.<br>
+	                - 웹소켓을 통한 대기실 시스템 구축 및 랭킹 시스템 구현.
+	              </div>
+	              <div class="work_gitLink">
+	                <img class="gitLink_img hvr-grow" id="gitLink1"  src="https://www.logolynx.com/images/logolynx/23/2334e82ea682a206c57645eb95817e43.png" onclick="window.open('https://github.com/ohsanrim/CookieRun_project', 'Cookie Run github page');">
+	                <i class="far fa-file-powerpoint hvr-grow" id="powerPoint_work1" onclick="window.open('portfolio/cookie_run_project.pdf', 'Cookie Run Project');"></i>
+	              </div>
+	            </div>
+	            <div class="design_container">
+	              <ul class="design_wrap">
+	                  <li>
+	                      <div class="mockup">
+	                        <!--<a href="http://www.kimyeju.com/original/mcdelivery.jpg" target="_blank" id="orig0">-->
+	                          <a href="#" target="_blank" id="orig0">
+	                          <img src="<%=request.getContextPath()%>/resources/images/cookie-run.png" alt="원본 보기"></a>
+	                      </div>
+	                  </li>
+	              </ul>
+	            </div>
+	          </div>
+	        </div>
+		  </div>
       </section>
       <!-- <section> close ============================-->
       <!-- ============================================-->
-
-
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section>
-
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-6 mb-4"><img class="w-100" src="<%=request.getContextPath()%>/resources/assets/img/illustration/5.png" alt="..." /></div>
-            <div class="col-md-6 text-center text-md-start">
-              <h4 class="fs-3 fw-normal" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">Move the way you want, <br />Roads are open</h4>
-              <p class="fs-0 pe-xl-7" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">Opportunity is everything. Get out there and find it with Uber.</p>
-              <div class="d-flex justify-content-center align-item-center my-3 mt-2">
-                <div>
-                  <h4 class="fw-normal fs-1">Route</h4>
-                  <p class="my-1 fs-0 pe-xl-8">Route among the safe roads. Find what's waiting for you.</p>
-                </div>
-                <div>
-                  <h4 class="fw-normal fs-1">Share</h4>
-                  <p class="my-1 fs-0 pe-xl-8">Your caring gets it's way. Let your people know.</p>
-                </div>
-              </div>
-              <button class="btn btn-sm btn-primary btn-bg-purple my-4 me-1" href="#!" role="button">Get started</button><a class="btn btn-sm my-2 btn-default" href="#" role="button">Questions? Talk to our team<i class="fas fa-arrow-right ms-2"></i></a>
+	  <section id="work2">
+      	<div class="container">
+      		<div class="work1_wrapper">
+	      		<div class="design_container">
+	              <ul class="design_wrap">
+	                  <li>
+	                      <div class="mockup">
+	                          <!--<a href="http://www.kimyeju.com/original/mcdelivery.jpg" target="_blank" id="orig0">-->
+	                          <a href="#" target="_blank" id="orig0">
+	                            <img src="<%=request.getContextPath()%>/resources/images/morip.png" alt="원본 보기"></a>
+	                      </div>
+	                  </li>
+	              </ul>
+	            </div>
+	      		<div class="work_info" id="slideRight">
+	              <div class="work_header">
+	                <h1>"MO:RIP" Project</h1>
+	              </div>
+	              <div class="work_skills">
+	                <div class="skill_design">java</div>
+	                <div class="skill_design">Oracle</div>
+	                <div class="skill_design">Spring</div>
+	                <div class="skill_design">Bootstrap</div>
+	                <div class="skill_design">jQuery</div>
+	                <div class="skill_design">Javascript</div>
+	                <div class="skill_design">HTML5</div>
+	                <div class="skill_design">CSS3</div>
+	                <div class="skill_design">Ajax</div>
+	                <div class="skill_design">Spring MVC</div>
+	                <div class="skill_design">MyBatis</div>
+	                <div class="skill_design">Apache Tomcat</div>
+	              </div>
+	              <div class="work_ex" >
+	                국내의 인스타그램 및 여행노트, VOLO 등의 여행기록사이트와 SNS를 모티브로 제작한 여행기록사이트 “몰입(MO:RIP)” 프로젝트<br>
+	                - 마이페이지 디자인 및 기능 구현 <br>
+	                - 여행기 작성 페이지 디자인 및 기능 구현 <br>
+	                - 관리자 페이지 디자인 <br>
+	                - 뷰, 글 수정, 미리보기 페이지 디자인 및 기능 구현 담당<br>
+	                - 무한스크롤 구현<br>
+	                - Full calendar API, summernote API 을 사용한 글작성 구현 <br>
+	              </div>
+	              <div class="work_gitLink">
+	                <img class="gitLink_img hvr-grow" id="gitLink1"  src="https://www.logolynx.com/images/logolynx/23/2334e82ea682a206c57645eb95817e43.png" onclick="window.open('https://github.com/ohsanrim/morip', 'Cookie Run github page');">
+	                <i class="far fa-file-powerpoint hvr-grow" id="powerPoint_work1" onclick="window.open('portfolio/MORIP_project.pdf', 'Cookie Run Project');"></i>
+	              </div>
+	            </div>
             </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
+      	</div>
+      
       </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-      <section class="p-0" id="docs">
-        <div class="bg-holder d-none d-lg-block" style="background-image:url(<%=request.getContextPath()%>/resources/assets/img/illustration/6.png);background-position:right top;background-size:contain;">
-        </div>
-        <!--/.bg-holder-->
-
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-12 col-lg-7 col-xl-5 text-lg-start text-center">
-              <h1 class="fs-3 fw-normal mt-6">Your finances on autopilot</h1>
-              <p class="fs-0">Gohub monitors application stability, so you can make data-driven decision on whether you should be building new features, or fixing bugs.</p>
-            </div>
-          </div>
-          <div class="row align-items-center mt-7">
-            <h4 class="fs-2 fw-normal">Save Time</h4>
-            <ul class="list-unstyled py-3">
-              <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>intuitive process and single interface
-              </li>
-              <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Online and paperless
-              </li>
-              <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Real-time notification
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section class="py-5">
-        <div class="container" id="auto">
-          <div class="row align-items-center">
-            <div class="col-md-6 text-md-start">
-              <h4 class="fs-2 fw-normal">Monitor your expenses</h4>
-              <ul class="list-unstyled py-3">
-                <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Specific access/rights by users
-                </li>
-                <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Physical and virtual Mastercards with adjestable payment limits
-                </li>
-                <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Dashboards to follow-up on your expenses
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-6 mt-4 mt-md-0 text-start">
-              <h4 class="fs-2 fw-normal">Make accounting easier</h4>
-              <ul class="list-unstyled py-3">
-                <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Unlimited history
-                </li>
-                <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>REad-only access for your accountant
-                </li>
-                <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Plug-and-play for accounting tools
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </main>
     
     <%@ include file="../footer.jsp" %>
