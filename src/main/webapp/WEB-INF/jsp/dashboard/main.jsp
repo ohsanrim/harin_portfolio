@@ -12,7 +12,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>GoHub | Free Traveling Template</title>
+    <title>Harin Kwak : Java & Server Developer</title>
 
 
     <!-- ===============================================-->
@@ -49,7 +49,9 @@
     <script src="<%=request.getContextPath()%>/resources/assets/js/portfolio.js"></script>
 	<style>
 	
-	
+	#home {
+		background-color: #e8eaf6;
+	}
 	.bg-10000 {
    		background-color: #9499b7 !important;
 	}
@@ -109,7 +111,7 @@
             <div class="col-md-9 col-xxl-5 text-md-start text-center py-6 pt-8">
               <h1 class="fs-4 fs-md-5 fs-xxl-4" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">Hello!</h1>
               <p class="fs-1" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">부족한 점을 항상 배우려 노력하는<span id="point">"꾸준함"</span> 뿐만이 아닌, 항상 끊임없이 새로운 것을 배우고 경험하고자 하는 <span id="point">"만능 에너자이저" 개발자</span> 곽하린 입니다.</p>
-              <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start mt-5" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll"><a class="btn btn-sm btn-primary me-1" href="#!" role="button">Get started</a><a class="btn btn-sm btn-default" href="#" role="button">Questions? Contract Me!<i class="fas fa-arrow-right ms-2"></i></a></div>
+              <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start mt-5" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll"><a class="btn btn-sm btn-primary me-1" id="profile_btn" role="button">Profile</a><a class="btn btn-sm btn-default" href="#" role="button">Questions? Contact Me!<i class="fas fa-arrow-right ms-2"></i></a></div>
             </div>
           </div>
         </div>
@@ -204,7 +206,7 @@
 	              </div>
 	              <div class="work_gitLink">
 	                <img class="gitLink_img hvr-grow" id="gitLink1"  src="https://www.logolynx.com/images/logolynx/23/2334e82ea682a206c57645eb95817e43.png" onclick="window.open('https://github.com/ohsanrim/CookieRun_project', 'Cookie Run github page');">
-	                <i class="far fa-file-powerpoint hvr-grow" id="powerPoint_work1" onclick="window.open('portfolio/cookie_run_project.pdf', 'Cookie Run Project');"></i>
+	                <i class="far fa-file-powerpoint hvr-grow" id="powerPoint_work1" onclick="window.open('<%=request.getContextPath()%>/resources/ppt/cookie_run_project.pdf', 'Cookie Run Project');"></i>
 	              </div>
 	            </div>
 	            <div class="design_container">
@@ -267,7 +269,7 @@
 	              </div>
 	              <div class="work_gitLink">
 	                <img class="gitLink_img hvr-grow" id="gitLink1"  src="https://www.logolynx.com/images/logolynx/23/2334e82ea682a206c57645eb95817e43.png" onclick="window.open('https://github.com/ohsanrim/morip', 'Cookie Run github page');">
-	                <i class="far fa-file-powerpoint hvr-grow" id="powerPoint_work1" onclick="window.open('portfolio/MORIP_project.pdf', 'Cookie Run Project');"></i>
+	                <i class="far fa-file-powerpoint hvr-grow" id="powerPoint_work1" onclick="window.open('<%=request.getContextPath()%>/resources/ppt/MORIP_project.pdf', 'Cookie Run Project');"></i>
 	              </div>
 	            </div>
             </div>
@@ -275,6 +277,39 @@
       
       </section>
     </main>
+    
+        <!-- Modal -->
+  <div class="modal-wrapper">
+    <div class="modal">
+      <div class="head">
+        <a class="btn-close trigger" href="#">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="content">
+        <div class="myLogo">
+          <img src="images/harin3.jpg" alt="">
+        </div>
+        <div class="myInfo">
+          <div class="info name">
+            <h4>Name</h4><p>곽하린</p>
+          </div>
+          <div class="info age">
+            <h4>Age</h4><p>23세(1998.02.08)</p>
+          </div>
+          <div class="info phone">
+            <h4>Phone</h4><p>82+ 10-4319-7701</p>
+          </div>
+          <div class="info blog">
+            <h4>Blog</h4><a href="https://blog.naver.com/ka28" target="_blank">www.blog.naver.com/ka28</a>
+          </div>
+          <div class="info github">
+            <h4>Github</h4> <a href="https://github.com/ohsanrim" target="_blank">www.github.com/ohsanrim</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     
     <%@ include file="../footer.jsp" %>
 
@@ -294,6 +329,22 @@
     	window.onload = function(){
 	    	  console.log("<%=request.getContextPath()%>/resources");
     	  }
+    	
+    	
+    	$('#profile_btn').click(function(){
+    		console.log("////////////////////");
+            $('.modal-wrapper').toggleClass('open');
+            return false;
+        });
+    	//모달창css
+        $(document).ready(function(){
+        	console.log("asdadasd");
+          
+          $('.trigger').on('click', function() {
+            $('.modal-wrapper').toggleClass('open');
+             return false;
+          });
+        });
     </script>
     
 

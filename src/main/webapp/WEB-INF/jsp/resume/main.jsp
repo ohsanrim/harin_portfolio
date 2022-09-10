@@ -36,14 +36,36 @@
     <link href="<%=request.getContextPath()%>/resources/assets/css/theme.css" rel="stylesheet" />
     <link href="<%=request.getContextPath()%>/resources/assets/css/user.css" rel="stylesheet" />
 	<style>
-	
-	.bg-10000 {
-   		background-color: #9499b7 !important;
-	}
-	.bg-10000 h2, .bg-10000 .text-5000 {
-		color: #e8eaf6
+	h1, h2, h3, h4, h5, h6{ font-family: 'Work Sans', sans-serif; }
+	.container {
+		display:flex;
+		
 	}
 	
+	.container.border_gray {
+		border-bottom: solid 1px gray; 
+		border-opacity: 0.3;
+	}
+	.container.margintop {
+		margin-top:30px;
+	}
+	.container.resume{
+		height: 200px;
+	    align-items: flex-end;
+	    margin-bottom:100px;
+	}
+	.sub_container_title {
+		width:60%;
+	}
+	
+	.resumes_wrapper{
+		width:40%;
+	}
+	
+	.resume_wrapper{ display:flex; justify-content:space-between; margin-bottom:70px; margin-top:50px; }
+	.resume_wrapper .resume_year { width:30%; }
+	.resume_year, .resume_description {font-family: 'Avenir Light'; font-size:16px;}
+	.resume_wrapper .resume_contents_wrapper { width:69%; }
 	</style>
   </head>
 
@@ -56,151 +78,82 @@
     <%@ include file="../header.jsp" %>
     
     
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section id="pricing">
-
-        <div class="container">
-          <div class="row flex-center">
-            <div class="col-md-6 text-center text-md-start">
-              <h4 class="fw-normal fs-3" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">Your safety is always <br />a top priority</h4>
-              <p class="fs-0 pe-xl-8" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">We are committed to help drivers and riders get where they want to go with confidence</p>
-              <div class="d-flex justify-content-space-between align-item-center my-3 mt-2">
-                <div>
-                  <h4 class="fw-normal fs-1">Drive</h4>
-                  <p class="my-1 fs-0 pe-xl-8">Drive when you want. Find ooprtunities around you.</p>
-                </div>
-                <div>
-                  <h4 class="fw-normal fs-1">Ride</h4>
-                  <p class="my-1 fs-0 pe-xl-8">Tap your phone. Get where you're headed</p>
-                </div>
-              </div>
-              <button class="btn btn-sm btn-primary my-4 me-1" href="#!" role="button">Get started</button><a class="btn btn-sm my-2 btn-default" href="#" role="button">Questions? Talk to our team<i class="fas fa-arrow-right ms-2"></i></a>
-            </div>
-            <div class="col-md-6 mb-4"><img class="w-100" src="<%=request.getContextPath()%>/resources/assets/img/illustration/4.png" alt="..." /></div>
-          </div>
+      <section id="head_title">
+        <div class="container resume">
+        	<h1 class="text-center display-5 " style="font-family: 'Work Sans', sans-serif;" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll"> Resume </h1>
         </div>
-        <!-- end of .container-->
-
+        <div class="container margintop border_gray">
+       		<div class="sub_container_title">
+         		<h3 style="font-family: 'Work Sans', sans-serif;">Work<br>Experience</h3>
+         	</div>
+          	<div class=resumes_wrapper>
+          		<div class="resume_wrapper">
+          			<div class="resume_year" >2020 - Present</div>
+          			<div class="resume_contents_wrapper">
+	        			<div class="resume_title">
+	        				<h4>Editor</h4>
+	        			</div>
+	        			<div class="resume_description">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.</div>
+          			</div>
+          		</div>
+          		<div class="resume_wrapper">
+          			<div class="resume_year" >2020 - Present</div>
+          			<div class="resume_contents_wrapper">
+	        			<div class="resume_title">
+	        				<h4>Editor</h4>
+	        			</div>
+	        			<div class="resume_description">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.</div>
+          			</div>
+          		</div>
+          		<div class="resume_wrapper">
+          			<div class="resume_year" >2020 - Present</div>
+          			<div class="resume_contents_wrapper">
+	        			<div class="resume_title">
+	        				<h4>Editor</h4>
+	        			</div>
+	        			<div class="resume_description">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.</div>
+          			</div>
+          		</div>
+          	</div>
+        </div>
+        <div class="container margintop">
+       		<div class="sub_container_title">
+         		<h3 style="font-family: 'Work Sans', sans-serif;">Education</h3>
+         	</div>
+          	<div class=resumes_wrapper>
+          		<div class="resume_wrapper">
+          			<div class="resume_year" >2020 - Present</div>
+          			<div class="resume_contents_wrapper">
+	        			<div class="resume_title">
+	        				<h4>Editor</h4>
+	        			</div>
+	        			<div class="resume_description">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.</div>
+          			</div>
+          		</div>
+          		<div class="resume_wrapper">
+          			<div class="resume_year" >2020 - Present</div>
+          			<div class="resume_contents_wrapper">
+	        			<div class="resume_title">
+	        				<h4>Editor</h4>
+	        			</div>
+	        			<div class="resume_description">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.</div>
+          			</div>
+          		</div>
+          		<div class="resume_wrapper">
+          			<div class="resume_year" >2020 - Present</div>
+          			<div class="resume_contents_wrapper">
+	        			<div class="resume_title">
+	        				<h4>Editor</h4>
+	        			</div>
+	        			<div class="resume_description">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.</div>
+          			</div>
+          		</div>
+          	</div>
+        </div>
+        
       </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
+        
 
-
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section>
-
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-6 mb-4"><img class="w-100" src="<%=request.getContextPath()%>/resources/assets/img/illustration/5.png" alt="..." /></div>
-            <div class="col-md-6 text-center text-md-start">
-              <h4 class="fs-3 fw-normal" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">Move the way you want, <br />Roads are open</h4>
-              <p class="fs-0 pe-xl-7" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">Opportunity is everything. Get out there and find it with Uber.</p>
-              <div class="d-flex justify-content-center align-item-center my-3 mt-2">
-                <div>
-                  <h4 class="fw-normal fs-1">Route</h4>
-                  <p class="my-1 fs-0 pe-xl-8">Route among the safe roads. Find what's waiting for you.</p>
-                </div>
-                <div>
-                  <h4 class="fw-normal fs-1">Share</h4>
-                  <p class="my-1 fs-0 pe-xl-8">Your caring gets it's way. Let your people know.</p>
-                </div>
-              </div>
-              <button class="btn btn-sm btn-primary btn-bg-purple my-4 me-1" href="#!" role="button">Get started</button><a class="btn btn-sm my-2 btn-default" href="#" role="button">Questions? Talk to our team<i class="fas fa-arrow-right ms-2"></i></a>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-      <section class="p-0" id="docs">
-        <div class="bg-holder d-none d-lg-block" style="background-image:url(<%=request.getContextPath()%>/resources/assets/img/illustration/6.png);background-position:right top;background-size:contain;">
-        </div>
-        <!--/.bg-holder-->
-
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-12 col-lg-7 col-xl-5 text-lg-start text-center">
-              <h1 class="fs-3 fw-normal mt-6">Your finances on autopilot</h1>
-              <p class="fs-0">Gohub monitors application stability, so you can make data-driven decision on whether you should be building new features, or fixing bugs.</p>
-            </div>
-          </div>
-          <div class="row align-items-center mt-7">
-            <h4 class="fs-2 fw-normal">Save Time</h4>
-            <ul class="list-unstyled py-3">
-              <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>intuitive process and single interface
-              </li>
-              <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Online and paperless
-              </li>
-              <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Real-time notification
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section class="py-5">
-        <div class="container" id="auto">
-          <div class="row align-items-center">
-            <div class="col-md-6 text-md-start">
-              <h4 class="fs-2 fw-normal">Monitor your expenses</h4>
-              <ul class="list-unstyled py-3">
-                <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Specific access/rights by users
-                </li>
-                <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Physical and virtual Mastercards with adjestable payment limits
-                </li>
-                <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Dashboards to follow-up on your expenses
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-6 mt-4 mt-md-0 text-start">
-              <h4 class="fs-2 fw-normal">Make accounting easier</h4>
-              <ul class="list-unstyled py-3">
-                <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Unlimited history
-                </li>
-                <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>REad-only access for your accountant
-                </li>
-                <li class="mb-3 text-900"><span class="far fa-check-circle text-700 me-2"></span>Plug-and-play for accounting tools
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="bg-200" id="cta">
-
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <h2 class="fw-bold text-black">Ready to get started?</h2>
-              <p>Get an guided demo with an OKR expert.</p>
-            </div>
-            <div class="col-lg-6 h-100">
-              <div class="input-group">
-                <input class="form-control" type="text" placeholder="Email Address" />
-                <button class="btn btn-primary rounded-start-0 px-3" type="submit">Get Started</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-      
     </main>
     
     <%@ include file="../footer.jsp" %>
