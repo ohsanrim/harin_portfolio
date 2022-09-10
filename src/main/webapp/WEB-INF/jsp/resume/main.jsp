@@ -37,7 +37,7 @@
     <link href="<%=request.getContextPath()%>/resources/assets/css/user.css" rel="stylesheet" />
 	<style>
 	h1, h2, h3, h4, h5, h6{ font-family: 'Work Sans', sans-serif; }
-	.container {
+	.container.flex {
 		display:flex;
 		
 	}
@@ -79,10 +79,10 @@
     
     
       <section id="head_title">
-        <div class="container resume">
+        <div class="container resume flex">
         	<h1 class="text-center display-5 " style="font-family: 'Work Sans', sans-serif;" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll"> Resume </h1>
         </div>
-        <div class="container margintop border_gray">
+        <div class="container margintop border_gray flex">
        		<div class="sub_container_title">
          		<h3 style="font-family: 'Work Sans', sans-serif;">Work<br>Experience</h3>
          	</div>
@@ -116,7 +116,7 @@
           		</div>
           	</div>
         </div>
-        <div class="container margintop">
+        <div class="container margintop flex">
        		<div class="sub_container_title">
          		<h3 style="font-family: 'Work Sans', sans-serif;">Education</h3>
          	</div>
