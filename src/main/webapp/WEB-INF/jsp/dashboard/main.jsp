@@ -50,7 +50,10 @@
 	    display: none;
     	justify-content: center;
 	}
-	
+	.skill_images {
+		height:100px;
+		width:auto;
+	}
 	@media all and (min-width: 960px) {
 	  .main_image {
 			width: 50%;
@@ -100,43 +103,7 @@
       </section>
 
 
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section id="product">
-
-        <div class="container">
-          <div class="row mb-4">
-            <div class="col-md-6 h-100 text-center text-md-start p-0 p-md-5 pb-3">
-              <h2 class="mt-3">Improve the stability of your application</h2>
-              <p class="mb-0">Bugsnag monitors application stability, so you can make data-driven decisions on whether you should be building new features, or fixing bugs.</p>
-            </div>
-            <div class="col-md-6">
-              <div class="w-100 h-100 p-5 services-card-shadow rounded-4"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/1.png" alt="Dashboard" style="width:95px;" />
-                <h3 class="mt-3 lh-base">Be visible to &quot;like</h3>
-                <p class="mb-0">Strengthen your digital visibility in a universe where everyone is interested in traveling. We help you build your presence without having to lift a finger!</p>
-              </div>
-            </div>
-          </div>
-          <div class="row mb-4">
-            <div class="col-md-6">
-              <div class="w-100 h-100 p-5 services-card-shadow rounded-4"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/2.png" alt="Comment" style="width:95px;" />
-                <h3 class="mt-3 lh-base">Monitor Online</h3>
-                <p class="mb-0">The platform has multiple functionalities and key features. With our intelligent system, you can approve bookings and monitor everything in your business online.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="w-100 h-100 p-5 services-card-shadow rounded-4"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/3.png" alt="Tailored" style="width:95px;" />
-                <h3 class="mt-3 lh-base">More Income</h3>
-                <p class="mb-0">Being on a digital platform is another sales channel added to strengthen your business. With our insights tools, we analyze your gears performance in any season.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
+     
 
 
 
@@ -146,62 +113,50 @@
       <section id="customers">
 
         <div class="container">
-          <h1 class="text-center display-5 fw-semi-bold" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll"> Proof makes increasing conversion simple</h1>
-          <p class="text-center fs-0 fs-md-1" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll"> Getting a conversion boost didn't used to be this easy. Luckily, you found Proof. Now <br class="d-none d-lg-block" />you have the tools to let your customer do the selling for you.</p>
-          <div class="row mb-4 mt-6">
-            <div class="col-md-6 col-lg-3 text-center"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/4.png" alt="Dashboard" style="width:95px;" />
-              <h4 class="mt-3 lh-base">High Conversions</h4>
-              <p class="fs-0">Convert more wesite visitors in signups ans purchases.</p>
+          <h1 class="text-center display-5 fw-semi-bold" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll"> Skill </h1>
+          <div class="row mb-4 mt-6" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">
+            <div class="col-md-6 col-lg-3 text-center"><img class="skill_images" src="<%=request.getContextPath()%>/resources/images/skill_images/1.png" alt="Dashboard" />
+              <h4 class="mt-3 lh-base">Java</h4>
             </div>
-            <div class="col-md-6 col-lg-3 text-center"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/5.png" alt="Comment" style="width:95px;" />
-              <h4 class="mt-3 lh-base">Save on Acquisition</h4>
-              <p class="fs-0">Your advertising spend will go further than ever before.</p>
+           	<div class="col-md-6 col-lg-3 text-center"><img class="skill_images" src="<%=request.getContextPath()%>/resources/images/skill_images/2.png" alt="Dashboard" />
+              <h4 class="mt-3 lh-base">HTML</h4>
             </div>
-            <div class="col-md-6 col-lg-3 text-center"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/6.png" alt="Tailored" style="width:95px;" />
-              <h4 class="mt-3 lh-base">Increase Trust</h4>
-              <p class="fs-0">People trust companies they see other people buy.</p>
+            <div class="col-md-6 col-lg-3 text-center"><img class="skill_images" src="<%=request.getContextPath()%>/resources/images/skill_images/3.png" alt="Dashboard" />
+              <h4 class="mt-3 lh-base">CSS</h4>
             </div>
-            <div class="col-md-6 col-lg-3 text-center"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/7.png" alt="Dashboard" style="width:95px;" />
-              <h4 class="mt-3 lh-base">Social Influence</h4>
-              <p class="fs-0">Seeing other visitor taking action creates fear of missing out.</p>
+            <div class="col-md-6 col-lg-3 text-center"><img class="skill_images" src="<%=request.getContextPath()%>/resources/images/skill_images/4.png" alt="Dashboard" />
+              <h4 class="mt-3 lh-base">Javascript</h4>
             </div>
           </div>
-          <div class="row mb-6">
-            <div class="col-md-6 col-lg-3 text-center"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/8.png" alt="Dashboard" style="width:95px;" />
-              <h4 class="mt-3 lh-base">Activity Notifications</h4>
-              <p class="fs-0">Display recent sales and opt-ins on your pages and drive visitors.</p>
+          <div class="row mb-6" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">
+            <div class="col-md-6 col-lg-3 text-center"><img class="skill_images" src="<%=request.getContextPath()%>/resources/images/skill_images/5.png" alt="Dashboard"/>
+              <h4 class="mt-3 lh-base">MariaDB</h4>
             </div>
-            <div class="col-md-6 col-lg-3 text-center"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/9.png" alt="Dashboard" style="width:95px;" />
-              <h4 class="mt-3 lh-base">Custom Journeys</h4>
-              <p class="fs-0">Take your journey with ease and comfort of different level.</p>
+            <div class="col-md-6 col-lg-3 text-center"><img class="skill_images" src="<%=request.getContextPath()%>/resources/images/skill_images/6.png" alt="Dashboard"/>
+              <h4 class="mt-3 lh-base">CouchDB</h4>
             </div>
-            <div class="col-md-6 col-lg-3 text-center"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/10.png" alt="Dashboard" style="width:95px;" />
-              <h4 class="mt-3 lh-base">Custom Timing</h4>
-              <p class="fs-0">Control how fast your notification will display on your screen</p>
+            <div class="col-md-6 col-lg-3 text-center"><img class="skill_images" src="<%=request.getContextPath()%>/resources/images/skill_images/7.png" alt="Dashboard"/>
+              <h4 class="mt-3 lh-base">Oracle</h4>
             </div>
-            <div class="col-md-6 col-lg-3 text-center"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/11.png" alt="Dashboard" style="width:95px;" />
-              <h4 class="mt-3 lh-base">Live Visitor Count</h4>
-              <p class="fs-0">Show how many visitors are browing your site in a time</p>
+            <div class="col-md-6 col-lg-3 text-center"><img class="skill_images" src="<%=request.getContextPath()%>/resources/images/skill_images/8.png" alt="Dashboard" />
+              <h4 class="mt-3 lh-base">linux</h4>
             </div>
           </div>
-          <div class="row mb-6">
-            <div class="col-md-6 col-lg-3 text-center"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/12.png" alt="Dashboard" style="width:95px;" />
-              <h4 class="mt-3 lh-base">Visitor Identification</h4>
-              <p class="fs-0">We will show you detailed profiles of every visitor of the site.</p>
+          <div class="row mb-6" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">
+            <div class="col-md-6 col-lg-3 text-center"><img class="skill_images" src="<%=request.getContextPath()%>/resources/images/skill_images/9.png" alt="Dashboard" />
+              <h4 class="mt-3 lh-base">Hyperledger Fabric</h4>
             </div>
-            <div class="col-md-6 col-lg-3 text-center"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/13.png" alt="Dashboard" style="width:95px;" />
-              <h4 class="mt-3 lh-base">Custom Rules</h4>
-              <p class="fs-0">Granular control over the notification of your activity.</p>
+            <div class="col-md-6 col-lg-3 text-center"><img class="skill_images" src="<%=request.getContextPath()%>/resources/images/skill_images/10.png" alt="Dashboard" />
+              <h4 class="mt-3 lh-base">Docker</h4>
             </div>
-            <div class="col-md-6 col-lg-3 text-center"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/14.png" alt="Dashboard" style="width:95px;" />
-              <h4 class="mt-3 lh-base">Mobile Optimized</h4>
-              <p class="fs-0">Optimize the traffic to bring the best to your project.</p>
+            <div class="col-md-6 col-lg-3 text-center"><img class="skill_images" src="<%=request.getContextPath()%>/resources/images/skill_images/11.png" alt="Dashboard"/>
+              <h4 class="mt-3 lh-base">Spring Boot</h4>
             </div>
-            <div class="col-md-6 col-lg-3 text-center"><img src="<%=request.getContextPath()%>/resources/assets/img/icons/15.png" alt="Dashboard" style="width:95px;" />
-              <h4 class="mt-3 lh-base">Language Translation</h4>
-              <p class="fs-0">Translate recent activity notification into any language.</p>
+            <div class="col-md-6 col-lg-3 text-center"><img class="skill_images" src="<%=request.getContextPath()%>/resources/images/skill_images/12.png" alt="Dashboard"/>
+              <h4 class="mt-3 lh-base">Git</h4>
             </div>
           </div>
+          
         </div>
         <!-- end of .container-->
 
