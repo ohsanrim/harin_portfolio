@@ -39,4 +39,10 @@ public class HomeController {
 		System.out.println("contract enter");
 		return "/contract/main"; 
 	}
+	
+	@RequestMapping(value = "/myblog", method=RequestMethod.GET) 
+	public String myblog() { 
+		System.out.println("myblog enter");
+		return "/myblog/main"; 
+	}
 }
