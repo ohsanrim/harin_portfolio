@@ -111,7 +111,7 @@
             <div class="col-md-9 col-xxl-5 text-md-start text-center py-6 pt-8">
               <h1 class="fs-4 fs-md-5 fs-xxl-4" data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">Hello!</h1>
               <p class="fs-1" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">부족한 점을 항상 배우려 노력하는<span id="point">"꾸준함"</span> 뿐만이 아닌, 항상 끊임없이 새로운 것을 배우고 경험하고자 하는 <span id="point">"만능 에너자이저" 개발자</span> 곽하린 입니다.</p>
-              <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start mt-5" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll"><a class="btn btn-sm btn-primary me-1" id="profile_btn" role="button">Profile</a><a class="btn btn-sm btn-default" href="#" role="button">Questions? Contact Me!<i class="fas fa-arrow-right ms-2"></i></a></div>
+              <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-md-start mt-5" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll"><a class="btn btn-sm btn-primary me-1" id="profile_btn" role="button">Profile</a><a class="btn btn-sm btn-default" href="<%=request.getContextPath()%>/contract" role="button">Questions? Contact Me!<i class="fas fa-arrow-right ms-2"></i></a></div>
             </div>
           </div>
         </div>

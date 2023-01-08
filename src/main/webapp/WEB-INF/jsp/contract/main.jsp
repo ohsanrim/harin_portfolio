@@ -91,25 +91,6 @@
       </section>
 
 
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section id="product">
-        <div class="container">
-          <div class="contract_left_wrapper">
-          	<h1>Contact</h1>
-          	<div class=contact_description>
-          		Looking forward to hearing from you
-          	</div>
-          </div>
-          <div class="contract_right_wrapper">
-          </div>
-        </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
 
 
     </main>
