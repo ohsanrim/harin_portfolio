@@ -15,7 +15,6 @@ import lombok.Setter;
 @Setter
 @Table(name = "contract")
 public class Contract {
-	
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)

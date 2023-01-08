@@ -44,6 +44,7 @@
 		color: #e8eaf6
 	}
 	.contract_p { margin-top:20px;}
+	.contact_description {font-family: 'Avenir Light'; font-size:16px;}
 	</style>
   </head>
 
@@ -88,7 +89,29 @@
 	        </div>
         </form>
       </section>
-      
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section id="product">
+        <div class="container">
+          <div class="contract_left_wrapper">
+          	<h1>Contact</h1>
+          	<div class=contact_description>
+          		Looking forward to hearing from you
+          	</div>
+          </div>
+          <div class="contract_right_wrapper">
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
     </main>
     
     <%@ include file="../footer.jsp" %>
