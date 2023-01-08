@@ -117,11 +117,11 @@ h1, h2, h3, h4, h5, h6 {
 	<section id="head_title">
 		<div class="container resume flex">
 			<h1 class="text-center display-5 "
-				style="font-family: 'Work Sans', sans-serif;"
+				style="color: currentcolor; font-family: 'Work Sans', sans-serif;"
 				data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">
 				Resume</h1>
 		</div>
-		<div class="container margintop border_gray flex">
+		<div class="container margintop flex">
 			<div class="sub_container_title">
 				<h3 style="font-family: 'Work Sans', sans-serif;">Certificate</h3>
 			</div>
@@ -233,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
 			
 			callAjax('/resume/getAllByType/' + type, 'get', '', function(data) {
 				$(data).each(function(index, list) {
-					var data = '<div class="resume_wrapper certificate"><div class="resume_year">'+list.endDay+'</div><div class="resume_contents_wrapper"><div class="resume_title"><h4>'+list.title+'</h4></div></div></div>'
+					var data = '<div class="resume_wrapper certificate"><div class="resume_year">'+list.endDay+'</div><div class="resume_contents_wrapper"><div class="resume_title"><h4>'+list.title+'</h4></div><div class="resume_description">'+list.description+'</div></div></div>'
 					$('#certificate_box').append(data);
 				});
 			});
@@ -255,7 +255,7 @@ h1, h2, h3, h4, h5, h6 {
 			
 			callAjax('/resume/getAllByType/' + type, 'get', '', function(data) {
 				$(data).each(function(index, list) {
-					var data = '<div class="resume_wrapper"><div class="resume_year">'+list.endDay+'</div><div class="resume_contents_wrapper"><div class="resume_title"><h4>'+list.title+'</h4></div><div class="resume_description">'+list.description+'</div></div></div>';
+					var data = '<div class="resume_wrapper"><div class="resume_year">'+list.endDay+'<br/>~'+list.startDay+'</div><div class="resume_contents_wrapper"><div class="resume_title"><h4>'+list.title+'</h4></div><div class="resume_description">'+list.description+'</div></div></div>';
 					$('#work_exp_box').append(data);
 				});
 			});

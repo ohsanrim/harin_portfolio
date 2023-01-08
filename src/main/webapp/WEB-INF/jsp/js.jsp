@@ -41,15 +41,9 @@
             data     : $('#' + callFormName).serialize(),
             dataType : 'json',
             success  : function(data){
-            	/* blurExit(); */
             	successFunction(data);
             },
             error : function(request, status, error ) {   // 오류가 발생했을 때 호출된다.
-            	$("#div_load_image").hide();
-        		$("#mask").hide();
-        		
-            	blurExit();
-            	
             	$('#failCode').text(JSON.parse(request.responseText).resultMessage);
             	showFailModal();
            	}
@@ -66,15 +60,9 @@
             data     : data,
             dataType : 'json',
             success  : function(data){
-            	blurExit();
             	successFunction(data);
             },
             error : function(request, status, error ) {   // 오류가 발생했을 때 호출된다.
-            	$("#div_load_image").hide();
-        		$("#mask").hide();
-        		
-            	blurExit();
-            	
             	$('#failCode').text(JSON.parse(request.responseText).resultMessage);
             	showFailModal();
            	}
@@ -92,14 +80,9 @@
             data     : data,
             dataType : 'json',
             success  : function(data){
-            	blurExit();
             	successFunction(data);
             },
             error : function(request, status, error ) {   // 오류가 발생했을 때 호출된다.
-            	$("#div_load_image").hide();
-        		$("#mask").hide();
-        		
-            	blurExit();
             	
             	$('#failCode').text(JSON.parse(request.responseText).resultMessage);
             	showFailModal();
@@ -123,16 +106,11 @@
             contentType: false,
             dataType : 'json',
             success  : function(data){
-            	blurExit();
+            
             	successFunction(data);
             },
             error : function(request, status, error ) {   // 오류가 발생했을 때 호출된다.
-            	$("#div_load_image").hide();
-        		$("#mask").hide();
-        		
-            	blurExit();
             	
-//             	$('#failCode').text("code:"+request.status+"\n");
             	$('#failCode').text(JSON.parse(request.responseText).resultMessage);
             	showFailModal();
            	}
