@@ -291,7 +291,7 @@
 		//팔로우 체크
 		$.ajax({
 			type: 'post',
-			url: '/morip/myblog/followCheck',
+			url: '<%=request.getContextPath()%>/myblog/followCheck',
 			data: {'follow_email' : $('#pageEmail').val()},
 			dataType: 'json',
 			success: function(data){

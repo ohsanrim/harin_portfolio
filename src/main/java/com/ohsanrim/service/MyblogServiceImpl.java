@@ -2,11 +2,18 @@ package com.ohsanrim.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ohsanrim.entity.BlogBoard;
+import com.ohsanrim.entity.Follow;
+import com.ohsanrim.entity.Like;
+import com.ohsanrim.entity.Member;
+import com.ohsanrim.repository.FollowRepository;
+import com.ohsanrim.repository.LikeRepository;
+import com.ohsanrim.repository.MemberRepository;
 import com.ohsanrim.repository.MyblogRepository;
 
 //import java.util.HashMap;
@@ -31,6 +38,15 @@ public class MyblogServiceImpl{
 	@Autowired
 	private MyblogRepository myblogRepository;
 	
+	@Autowired
+	private MemberRepository memberRepository;
+	
+	@Autowired
+	private LikeRepository likeRepository;
+	
+	@Autowired
+	private FollowRepository followRepository;
+	
 	public List<BlogBoard> infinityScroll(Map<String,Object> map) {
 		
 		List<BlogBoard> blogList = myblogRepository.findAll();
@@ -43,7 +59,7 @@ public class MyblogServiceImpl{
 		// TODO Auto-generated method stub
 		return (int) myblogRepository.count();
 	}
-}
+
 //	@Autowired
 //	private MyblogDAO myblogDAO;
 //	
@@ -51,125 +67,158 @@ public class MyblogServiceImpl{
 //	private HttpSession session;
 //	
 	
+
+	
+	public void insertWriteBlog(BlogBoard blogBoard) {
+		myblogRepository.save(blogBoard);
+	}
+
+	public BlogBoard viewPage(String id) {
+		Optional<BlogBoard> blog = myblogRepository.findById(id);
+		return blog.get();
+	}
 //
 //	@Override
-//	public void insertWriteBlog(Map<String, String> map) {
-//		myblogDAO.insertWriteBlog(map);
-//	}
+	public void deleteBlogBoard(Map<String, String> map) {
+		String id = map.get("id");
+		String pseq = map.get("pseq");
+		myblogRepository.deleteByIdAndPseq(id, pseq);
+	}
 //
 //	@Override
-//	public MyblogDTO viewPage(int seq) {
-//		return myblogDAO.getView(seq);
-//	}
+	public void insertReply(BlogBoard blogBoard) {
+		myblogRepository.save(blogBoard);
+		
+	}
+//	@Override
+	public List<BlogBoard> loadReply(String email, int ref) {
+		return myblogRepository.findByEmailAndRefByOrderByStepAndIdDesc(email, ref);
+	}
 //
 //	@Override
-//	public void deleteBlogBoard(Map<String, String> map) {
-//		myblogDAO.deleteBlogBoard(map);
-//	}
-//
-//	@Override
-//	public void insertReply(Map<String, String> map) {
-//		myblogDAO.insertReply(map);
-//		
-//	}
-//	@Override
-//	public List<MyblogDTO> loadReply(int ref) {
-//		return myblogDAO.loadReply(ref);
-//	}
-//
-//	@Override
-//	public void updateReply(Map<String, String> map) {
-//		myblogDAO.updateReply(map);
-//	}
+	public void updateReply(BlogBoard blogBoard) {
+		myblogRepository.save(blogBoard);
+	}
 //
 //
 //	@Override
-//	public MemberDTO loadMember(String nickname) {
+	public Member loadMember(String nickname) {
+		return memberRepository.findByNickname(nickname);
 //		return myblogDAO.loadMember(nickname);
-//	}
+	}
 //
 //	@Override
-//	   public int boardSize(String email) {
-//	      
-//	      return myblogDAO.boardSize(email);
-//	   }
+	   public int boardSize(String email) {
+	      
+	      return myblogRepository.countByEmailAndStep(email, 0);
+	   }
 //
 //	
 //	@Override
-//	public MyblogDTO boardWriteCheck(Map<String, String> map) {
-//		
-//		return myblogDAO.boardWriteCheck(map);
-//	}
+	public BlogBoard boardWriteCheck(String id) {
+
+		Optional<BlogBoard> blog = myblogRepository.findById(id);
+		return blog.get();
+	}
 //	
 //	@Override
-//	public void like(Map<String, String> map) {
-//		
+	public void like(Map<String, String> map) {
+		
 //		String email = (String) session.getAttribute("memEmail");
 //		map.put("email", email);
-//		
-//		myblogDAO.like(map);
-//	}
+		String email = "ka28@naver.com";
+		String id = map.get("id");
+		Like like = new Like();
+		
+		like.setMemberEmail(email);
+		like.setId(id);
+		likeRepository.save(like);
+		
+		Optional<BlogBoard> blog = myblogRepository.findById(id);
+		BlogBoard blogBoard = blog.get();
+		blogBoard.setLikecount(blogBoard.getLikecount()+1);
+		myblogRepository.save(blogBoard);
+	}
 //	
 //	@Override
-//	public void unlike(Map<String, String> map) {
-//		
+	public void unlike(Map<String, String> map) {
+		String seq = map.get("seq");
+		String email = map.get("email");
+		
+		likeRepository.deleteByBoardSeqAndMemberEmail(seq, email);
 //		String email = (String) session.getAttribute("memEmail");
 //		map.put("email", email);
 //		
 //		myblogDAO.unlike(map);
-//	}
+		Optional<BlogBoard> blog = myblogRepository.findById(seq);
+		BlogBoard blogBoard = blog.get();
+		blogBoard.setLikecount(blogBoard.getLikecount()-1);
+		myblogRepository.save(blogBoard);
+	}
 //	
 //	@Override
-//	public List<LikeDTO> likeCheck() {
-//		
+	public List<Like> likeCheck() {
+		
 //		String email = (String) session.getAttribute("memEmail");
-//		return myblogDAO.likeCheck(email);
-//	}
+		String email = "ka28@naver.com";
+		return likeRepository.findByMemberEmail(email);
+	}
 //	
 //	@Override
-//	public LikeDTO likeViewCheck(Map<String, String> map) {
-//		return myblogDAO.likeViewCheck(map);
-//	}
+	public Like likeViewCheck(Map<String, String> map) {
+		String seq = map.get("id");
+		String memEmail = "ka28@naver.com";
+		
+		return likeRepository.findByMemberEmailAndBoardSeq(memEmail, seq);
+	}
 //	
 //	@Override
-//	public int likeSize(Map<String, String> map) {
-//		
-//		return myblogDAO.likeSize(map);
-//	}
+	public int likeSize(Map<String, String> map) {
+		String id = map.get("id");
+		Optional<BlogBoard> blogboardOp = myblogRepository.findById(id);
+		BlogBoard blogboard = blogboardOp.get();
+		return blogboard.getLikecount();
+	}
 //	
 //	@Override
-//	public List<MyblogDTO> likeListSize() {
-//		
-//		return myblogDAO.likeListSize();
-//	}
+	public List<BlogBoard> likeListSize() {
+		
+		return myblogRepository.findAll();
+	}
 //	
 //	@Override
-//	public void follow(Map<String, String> map) {
-//		
+	public void follow(Map<String, String> map) {
+		
 //		String email = (String) session.getAttribute("memEmail");
 //		map.put("email", email);
-//		
-//		myblogDAO.follow(map);
-//	}
-//	
+		String email = "ka28@naver.com";
+		String followEmail = map.get("followEmail");
+		
+		Follow follow = new Follow();
+		follow.setEmail(email);
+		follow.setFollowEmail(followEmail);
+		followRepository.save(follow);
+	}
+	
 //	@Override
-//	public void unfollow(Map<String, String> map) {
-//		
+	public void unfollow(Map<String, String> map) {
+		
 //		String email = (String) session.getAttribute("memEmail");
 //		map.put("email", email);
-//		
-//		myblogDAO.unfollow(map);
-//		
-//	}
-//
-//	@Override
-//	public FollowDTO followCheck(Map<String, String> map) {
+		String email = "ka28@naver.com";
+		String followEmail = map.get("followEmail");
+		
+		followRepository.deleteByEmailAndFollowEmail(email, followEmail);
+		
+	}
+	
+//	public Follow followCheck(Map<String, String> map) {
 //		
 //		String email = (String) session.getAttribute("memEmail");
 //		map.put("email", email);
 //		return myblogDAO.followCheck(map);
 //	}
-//	
+	
 //	@Override
 //	public List<FollowDTO> followClick(String email) {
 //		
@@ -238,4 +287,4 @@ public class MyblogServiceImpl{
 //	public List<MyblogDTO> bestTrip(Map<String, String> map) {
 //		return myblogDAO.bestTrip(map);
 //	}
-//}
+}

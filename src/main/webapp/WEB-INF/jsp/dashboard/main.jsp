@@ -234,7 +234,7 @@
 	                  <li>
 	                      <div class="mockup">
 	                          <!--<a href="http://www.kimyeju.com/original/mcdelivery.jpg" target="_blank" id="orig0">-->
-	                          <a href="#" target="_blank" id="orig0">
+	                          <a href="<%=request.getContextPath()%>/myblog" target="_blank" id="orig0">
 	                            <img src="<%=request.getContextPath()%>/resources/images/morip.png" alt="원본 보기"></a>
 	                      </div>
 	                  </li>
