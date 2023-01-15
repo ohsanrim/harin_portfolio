@@ -227,6 +227,8 @@
     </div>
   </div>
   </form>
+  <%@ include file="../footer.jsp" %>
+  
   <!-- Bootstrap core JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -264,7 +266,7 @@
           enctype: 'multipart/form-data',
           processData: false, //문자열이 아닌 파일 형식으로 보내준다
           contentType: false,
-          url: "/morip/myblog/bgImageSave",
+          url: "/myblog/bgImageSave",
           //data: sendingData, //imageboardWriteForm안의 0번째 방에있는 data들을 모두 가져간다
           data: new FormData($('#mypageForm')[0]),
           dataType:"text",
@@ -312,7 +314,7 @@
 		//팔로우 한 사람의 숫자
 		$.ajax({
 	        type: 'post',
-	        url: '/morip/myblog/followerSize',
+	        url: '<%=request.getContextPath()%>/myblog/followerSize',
 	        data: {'follow_email' : $('#pageEmail').val()},
 	        dataType: 'json',
 	        success: function(data){
@@ -326,7 +328,7 @@
 		//팔로잉 한 사람의 숫자
 		$.ajax({
 	        type: 'post',
-	        url: '/morip/myblog/followingSize',
+	        url: '<%=request.getContextPath()%>/myblog/followingSize',
 	        data: {'email' : $('#pageEmail').val()},
 	        dataType: 'json',
 	        success: function(data){
@@ -340,7 +342,7 @@
 		//좋아요 체크
 		$.ajax({
 	      type: 'post',
-	      url: '/morip/myblog/likeCheck',
+	      url: '<%=request.getContextPath()%>/myblog/likeCheck',
 	      dataType: 'json',
 	      success: function(data){
 	        $.each(data.list, function(index, items){

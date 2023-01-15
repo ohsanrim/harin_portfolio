@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.ohsanrim.entity.BlogBoard;
 import com.ohsanrim.entity.Follow;
-import com.ohsanrim.entity.Like;
+import com.ohsanrim.entity.UserLike;
 import com.ohsanrim.entity.Member;
 import com.ohsanrim.repository.FollowRepository;
 import com.ohsanrim.repository.LikeRepository;
@@ -46,6 +46,9 @@ public class MyblogServiceImpl{
 	
 	@Autowired
 	private FollowRepository followRepository;
+	
+	
+	final String email = "ka28@naver.com";
 	
 	public List<BlogBoard> infinityScroll(Map<String,Object> map) {
 		
@@ -91,8 +94,8 @@ public class MyblogServiceImpl{
 		
 	}
 //	@Override
-	public List<BlogBoard> loadReply(String email, int ref) {
-		return myblogRepository.findByEmailAndRefByOrderByStepAndIdDesc(email, ref);
+	public List<BlogBoard> loadReply(int ref) {
+		return myblogRepository.findByEmailAndRefOrderByStepDesc(email, Integer.toString(ref));
 	}
 //
 //	@Override
@@ -126,9 +129,8 @@ public class MyblogServiceImpl{
 		
 //		String email = (String) session.getAttribute("memEmail");
 //		map.put("email", email);
-		String email = "ka28@naver.com";
 		String id = map.get("id");
-		Like like = new Like();
+		UserLike like = new UserLike();
 		
 		like.setMemberEmail(email);
 		like.setId(id);
@@ -143,7 +145,6 @@ public class MyblogServiceImpl{
 //	@Override
 	public void unlike(Map<String, String> map) {
 		String seq = map.get("seq");
-		String email = map.get("email");
 		
 		likeRepository.deleteByBoardSeqAndMemberEmail(seq, email);
 //		String email = (String) session.getAttribute("memEmail");
@@ -157,19 +158,18 @@ public class MyblogServiceImpl{
 	}
 //	
 //	@Override
-	public List<Like> likeCheck() {
+	public List<UserLike> likeCheck() {
 		
 //		String email = (String) session.getAttribute("memEmail");
-		String email = "ka28@naver.com";
+//		
 		return likeRepository.findByMemberEmail(email);
 	}
 //	
 //	@Override
-	public Like likeViewCheck(Map<String, String> map) {
+	public UserLike likeViewCheck(Map<String, String> map) {
 		String seq = map.get("id");
-		String memEmail = "ka28@naver.com";
 		
-		return likeRepository.findByMemberEmailAndBoardSeq(memEmail, seq);
+		return likeRepository.findByMemberEmailAndBoardSeq(email, seq);
 	}
 //	
 //	@Override
@@ -191,7 +191,6 @@ public class MyblogServiceImpl{
 		
 //		String email = (String) session.getAttribute("memEmail");
 //		map.put("email", email);
-		String email = "ka28@naver.com";
 		String followEmail = map.get("followEmail");
 		
 		Follow follow = new Follow();
@@ -205,65 +204,80 @@ public class MyblogServiceImpl{
 		
 //		String email = (String) session.getAttribute("memEmail");
 //		map.put("email", email);
-		String email = "ka28@naver.com";
 		String followEmail = map.get("followEmail");
 		
 		followRepository.deleteByEmailAndFollowEmail(email, followEmail);
 		
 	}
 	
-//	public Follow followCheck(Map<String, String> map) {
-//		
+	public Follow followCheck(Follow follow) {
+		
 //		String email = (String) session.getAttribute("memEmail");
 //		map.put("email", email);
+		String followEmail = follow.getFollowEmail();
+		
+		return followRepository.findByEmailAndFollowEmail(email, followEmail);
 //		return myblogDAO.followCheck(map);
-//	}
+	}
 	
 //	@Override
-//	public List<FollowDTO> followClick(String email) {
-//		
+	public List<Follow> followClick(String email) {
+		return followRepository.followClick(email);
 //		return myblogDAO.followClick(email);
-//	}
+	}
 //	
 //	@Override
-//	public List<FollowDTO> followingClick(String follow_email) {
-//		
-//		return myblogDAO.followingClick(follow_email);
-//	}
+	public List<Follow> followingClick(String follow_email) {
+		
+		return followRepository.followingClick(follow_email);
+	}
 //	
 //	@Override
-//	public int followerSize(String follow_email) {
-//		
+	public int followerSize(String follow_email) {
+		return followRepository.countByFollowEmail(follow_email);
 //		return myblogDAO.followerSize(follow_email);
-//	}
+	}
 //	
 //	@Override
-//	public int followingSize(String email) {
-//		
+	public int followingSize(String email) {
+		return followRepository.countByFollowEmail(email);
 //		return myblogDAO.followingSize(email);
-//	}
+	}
 //	
 //	@Override
-//	public int replySize(String seq) {
-//		
+	public int replySize(String seq) {
+		return myblogRepository.countByRef(seq);
 //		return myblogDAO.replySize(seq);
-//	}
+	}
 //
 //	@Override
-//	public void updateBgImg(Map <String, String> map) {
+	public void updateBgImg(Map <String, String> map) {
+		Member member = memberRepository.findByEmail(email);
+		
+		String backimage = map.get("backimage");
+		member.setBackimage(backimage);
+		
+		memberRepository.save(member);
+//		myblogRepository.save();
 //		myblogDAO.updateBgImg(map);
-//		
-//	}
+		
+	}
 //
 //	@Override
-//	public void modifyBoard(Map<String, String> map) {
-//		myblogDAO.modifyBoard(map);
-//	}
+	public void modifyBoard(BlogBoard blogBoard) {
+//		String seq = map.get("seq");
+		myblogRepository.save(blogBoard);
+	}
 //
 //	@Override
-//	public void boardHit(String seq) {
+	public void boardHit(String seq) {
+		
+		Optional<BlogBoard> blogBoard = myblogRepository.findById(seq);
+		BlogBoard modifyBlogBoard = blogBoard.get();
+		modifyBlogBoard.setHit(modifyBlogBoard.getHit()+1);
+		myblogRepository.save(modifyBlogBoard);
 //		myblogDAO.boardHit(seq);
-//	}
+	}
 //
 //	@Override
 //	public List<HashtagDTO> loadHashtag(String seq) {

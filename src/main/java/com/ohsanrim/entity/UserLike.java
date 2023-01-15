@@ -1,9 +1,9 @@
 package com.ohsanrim.entity;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,15 +13,16 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "Like")
-public class Like {
+@Table(name = "UserLike")
+public class UserLike {
 	
 	@Id
 	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
 	
 	@Column(name = "boardSeq")
-	private int  boardSeq;
+	private int boardSeq;
 	
 	@Column(name = "memberEmail")
 	private String memberEmail;
