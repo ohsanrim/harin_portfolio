@@ -19,7 +19,6 @@ import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,10 +29,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ohsanrim.entity.BlogBoard;
 import com.ohsanrim.entity.Follow;
-import com.ohsanrim.entity.UserLike;
 import com.ohsanrim.entity.Member;
+import com.ohsanrim.entity.UserLike;
 import com.ohsanrim.service.MyblogServiceImpl;
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 
 @RestController
@@ -178,7 +176,7 @@ public class MyblogController {
 
 	@RequestMapping(value = "writeBlog1", method = RequestMethod.GET)
 	public ModelAndView writeBlog1(HttpSession session, @RequestParam(value = "startdate") String startdate,
-			@RequestParam(value = "enddate") String enddate) throws ParseException {
+			@RequestParam(value = "enddate") String enddate) {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/resources/main/index");
 		mav.addObject("startdate", startdate);
