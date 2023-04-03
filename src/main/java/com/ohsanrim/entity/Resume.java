@@ -26,10 +26,10 @@ public class Resume {
 	private String type;
 	
 	@Column(name = "startDay")
-	private String startDay;
+	private Date startDay;
 	
 	@Column(name = "endDay")
-	private String endDay;
+	private Date endDay;
 	
 	@Column(name = "title")
 	private String title;

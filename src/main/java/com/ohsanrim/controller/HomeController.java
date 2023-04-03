@@ -48,6 +48,11 @@ public class HomeController {
 		return "/contract/main"; 
 	}
 	
+	@RequestMapping(value = "/admin", method=RequestMethod.GET) 
+	public String admin() { 
+		return "/admin/main"; 
+	}
+	
 	@RequestMapping(value = "/myblog", method=RequestMethod.GET) 
 	public String myblog(HttpSession session, Model model, HttpServletResponse response) { 
 		System.out.println("myblog enter");
@@ -56,17 +61,17 @@ public class HomeController {
 			Cookie cookie = new Cookie("memHit", "ok");
 			cookie.setMaxAge(30 * 60);
 			cookie.setPath("/");
-			response.addCookie(cookie);// 클라이언트에게 보내기
+			response.addCookie(cookie);// �겢�씪�씠�뼵�듃�뿉寃� 蹂대궡湲�
 		}
 
-		// DB 에서 해당 유저에 대한 정보 및 작성한 모든 글 호출.
+		// DB �뿉�꽌 �빐�떦 �쑀���뿉 ���븳 �젙蹂� 諛� �옉�꽦�븳 紐⑤뱺 湲� �샇異�.
 		Member memberDTO = myblogServiceImpl.loadMember(nickname);
-		// 배경 사진이 등록되지 않았을 경우
+		// 諛곌꼍 �궗吏꾩씠 �벑濡앸릺吏� �븡�븯�쓣 寃쎌슦
 
 		if (memberDTO.getImage().equals("0")) {
-			// 프로필사진이 비어있을 경우
+			// �봽濡쒗븘�궗吏꾩씠 鍮꾩뼱�엳�쓣 寃쎌슦
 			memberDTO.setImage("basicUserImg.png");
-		} // 배경사진이 비어있을 경우
+		} // 諛곌꼍�궗吏꾩씠 鍮꾩뼱�엳�쓣 寃쎌슦
 		if (memberDTO.getBackimage().equals("0")) {
 			memberDTO.setBackimage("basicBgImg.jpg");
 		}

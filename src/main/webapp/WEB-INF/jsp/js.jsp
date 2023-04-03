@@ -28,6 +28,10 @@
 	<script src="<%=request.getContextPath()%>/resources/assets/js/theme.js"></script>
 	<script src="<%=request.getContextPath()%>/resources/assets/js/jquery-2.2.4.min.js"></script>
 	
+	<script src="<%=request.getContextPath()%>/resources/assets/js/jquery.dataTables.min.js"></script>
+	
+	<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<script>
 	
 	var CONTEXT_PATH = '<%=request.getContextPath()%>';

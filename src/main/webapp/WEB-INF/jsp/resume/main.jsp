@@ -233,7 +233,8 @@ h1, h2, h3, h4, h5, h6 {
 			
 			callAjax('/resume/getAllByType/' + type, 'get', '', function(data) {
 				$(data).each(function(index, list) {
-					var data = '<div class="resume_wrapper certificate"><div class="resume_year">'+list.endDay+'</div><div class="resume_contents_wrapper"><div class="resume_title"><h4>'+list.title+'</h4></div><div class="resume_description">'+list.description+'</div></div></div>'
+					var dayByFormat = dateFormat(new Date(list.startDay));
+					var data = '<div class="resume_wrapper certificate"><div class="resume_year">'+dayByFormat+'</div><div class="resume_contents_wrapper"><div class="resume_title"><h4>'+list.title+'</h4></div><div class="resume_description">'+list.description+'</div></div></div>'
 					$('#certificate_box').append(data);
 				});
 			});
@@ -244,7 +245,9 @@ h1, h2, h3, h4, h5, h6 {
 			
 			callAjax('/resume/getAllByType/' + type, 'get', '', function(data) {
 				$(data).each(function(index, list) {
-					var data = '<div class="resume_wrapper"><div class="resume_year">'+list.endDay+'</div><div class="resume_contents_wrapper"><div class="resume_title"><h4>'+list.title+'</h4></div><div class="resume_description">'+list.description+'</div></div></div>';
+					var startDayByFormat = dateFormat(new Date(list.startDay));
+					var endDayByFormat = dateFormat(new Date(list.endDay));
+					var data = '<div class="resume_wrapper"><div class="resume_year">'+startDayByFormat+'<br/>~ '+endDayByFormat+'</div><div class="resume_contents_wrapper"><div class="resume_title"><h4>'+list.title+'</h4></div><div class="resume_description">'+list.description+'</div></div></div>';
 					$('#education_box').append(data);
 				});
 			});
@@ -255,11 +258,32 @@ h1, h2, h3, h4, h5, h6 {
 			
 			callAjax('/resume/getAllByType/' + type, 'get', '', function(data) {
 				$(data).each(function(index, list) {
-					var data = '<div class="resume_wrapper"><div class="resume_year">'+list.endDay+'<br/>~'+list.startDay+'</div><div class="resume_contents_wrapper"><div class="resume_title"><h4>'+list.title+'</h4></div><div class="resume_description">'+list.description+'</div></div></div>';
+					var startDayByFormat = dateFormat(new Date(list.startDay));
+					var endDayByFormat = null;
+					
+					if(list.endDay !== null && list.endDay !== undefined){
+						console.log("1");
+						endDayByFormat = dateFormat(new Date(list.startDay));
+					} else {
+						console.log("2");
+						endDayByFormat = "재직중";
+					}
+					
+					var data = '<div class="resume_wrapper"><div class="resume_year">'+startDayByFormat+'<br/>~ '+endDayByFormat+'</div><div class="resume_contents_wrapper"><div class="resume_title"><h4>'+list.title+'</h4></div><div class="resume_description">'+list.description+'</div></div></div>';
 					$('#work_exp_box').append(data);
 				});
 			});
 		}
+		
+		function dateFormat(date) {
+	        let month = date.getMonth() + 1;
+	        let day = date.getDate();
+
+	        month = month >= 10 ? month : '0' + month;
+	        day = day >= 10 ? day : '0' + day;
+
+	        return date.getFullYear() + '-' + month + '-' + day;
+	}
 		
 	</script>
 
