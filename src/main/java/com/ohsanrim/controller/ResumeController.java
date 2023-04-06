@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,6 +31,14 @@ public class ResumeController {
 	public ResponseEntity<List<Resume>> getAllByType(@PathVariable("type") String type) {
 		System.out.println("enter getAllByType...");
 		return new ResponseEntity<List<Resume>>(resumeService.getAllByType(type), HttpStatus.OK);
+		
+	}
+	
+	@PostMapping(value = "save")
+	public ResponseEntity<Resume> save(Resume resume) {
+		System.out.println("enter resume save...");
+		System.out.println("resume.toString() >> "+resume.toString());
+		return new ResponseEntity<Resume>(resumeService.save(resume), HttpStatus.OK);
 		
 	}
 }

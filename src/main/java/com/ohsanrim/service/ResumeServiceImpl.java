@@ -21,4 +21,9 @@ public class ResumeServiceImpl {
 		return resumeRepository.findByType(type);
 	}
 
+	public Resume save(Resume resume) {
+		// TODO Auto-generated method stub
+		return resumeRepository.save(resume);
+	}
+
 }

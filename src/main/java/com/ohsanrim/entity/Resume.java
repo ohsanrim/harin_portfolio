@@ -9,12 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
+@ToString
 @Table(name = "resume")
 public class Resume {
 	@Id
@@ -26,9 +30,11 @@ public class Resume {
 	private String type;
 	
 	@Column(name = "startDay")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date startDay;
 	
 	@Column(name = "endDay")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date endDay;
 	
 	@Column(name = "title")
