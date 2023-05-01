@@ -47,6 +47,10 @@
 	.bg-10000 h2, .bg-10000 .text-5000 {
 		color: #e8eaf6
 	}
+	
+	#contents { margin-left: 10%;
+    margin-right: 10%; padding-bottom:0;}
+    
 	.contract_p { margin-top:20px;}
 	.contact_description {font-family: 'Avenir Light'; font-size:16px;}
 	.close { border: none; }
@@ -74,7 +78,7 @@
     
     <main class="main" id="top">
       
-      <section class="py-7 py-lg-10" id="home">
+      <section class="py-7" id="contents">
       	<div style="width: 90%;margin: auto;">
 	      	<h3>Resume</h3>
       		<div class="insertResume" style="display:flex; justify-content: flex-end;">
@@ -92,6 +96,26 @@
 			                <th>StartDay</th>
 			                <th>EndDay</th>
 			                <th>Descriptions</th>
+			            </tr>
+			        </thead>
+			        
+			    </table>
+	       	</div>
+      	</div>
+        
+      </section>
+      <section class="py-7" id="contents">
+      	<div style="width: 90%;margin: auto;">
+	      	<h3>Contract</h3>
+	       	<div>
+		       	<table id="contract" class="table table-striped table-bordered table-hover"  style="width:100%">
+			        <thead>
+			            <tr>
+			                <th>ID</th>
+			                <th>Email</th>
+			                <th>first_name</th>
+			                <th>last name</th>
+			                <th>message</th>
 			            </tr>
 			        </thead>
 			        
@@ -172,6 +196,35 @@
     	    		{ data: "startDay"},
     	    		{ data: "endDay"},
     	    		{ data: "description"}
+    	    	],
+    	    	pageLength: 3,
+                bPaginate: false,
+                bLengthChange: false,
+                bAutoWidth: false,
+                processing: false,
+                ordering: false,
+                serverSide: false,
+                searching: false,
+    	    });
+    	    
+    	    $('#contract').DataTable({
+    	    	ajax: {
+    	    	    url: "/ohsanrim/contract/getAll",
+    	    	    dataSrc : function ( json ) {
+    	    	    	console.log(json);
+    	    	     /*  $.each(json.data, function (idx, item) {
+    	    	    	console.log(idx);
+    	    	        console.log(item);
+    	    	      }); */
+    	    	      return json;
+    	    	    }
+    	    	  },
+    	    	columns: [
+    	    		{ data: "id"},
+    	    		{ data: "email"},
+    	    		{ data: "firstName"},
+    	    		{ data: "lastName"},
+    	    		{ data: "message"}
     	    	],
     	    	pageLength: 3,
                 bPaginate: false,

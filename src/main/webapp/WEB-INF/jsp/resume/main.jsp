@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .container.resume {
 	height: 200px;
-	align-items: flex-end;
+	align-items: center;
 	margin-bottom: 100px;
 }
 
@@ -102,6 +102,8 @@ h1, h2, h3, h4, h5, h6 {
 .resume_wrapper .resume_contents_wrapper {
 	width: 69%;
 }
+
+.title {width:100%; background-color: #ffffd8;}
 </style>
 </head>
 
@@ -115,12 +117,15 @@ h1, h2, h3, h4, h5, h6 {
 
 
 	<section id="head_title">
-		<div class="container resume flex">
-			<h1 class="text-center display-5 "
-				style="color: currentcolor; font-family: 'Work Sans', sans-serif;"
-				data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">
-				Resume</h1>
+		<div class="title">
+			<div class="container resume flex">
+				<h1 class="text-center display-5 "
+					style="color: currentcolor; font-family: 'Work Sans', sans-serif;"
+					data-zanim-xs='{"delay":0.3}' data-zanim-trigger="scroll">
+					Resume</h1>
+			</div>
 		</div>
+		
 		<div class="container margintop flex">
 			<div class="sub_container_title">
 				<h3 style="font-family: 'Work Sans', sans-serif;">Certificate</h3>
@@ -166,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
 				</div> -->
 			</div>
 		</div>
-		<div class="container margintop border_gray flex">
+		<div class="container margintop  flex">
 			<div class="sub_container_title">
 				<h3 style="font-family: 'Work Sans', sans-serif;">
 					Work<br>Experience
