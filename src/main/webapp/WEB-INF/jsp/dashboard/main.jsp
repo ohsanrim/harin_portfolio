@@ -354,7 +354,7 @@
 	            <h4>Name</h4><p>곽하린</p>
 	          </div>
 	          <div class="info age">
-	            <h4>Age</h4><p>23세(1998.02.08)</p>
+	            <h4>Birth</h4><p>1998.02.08</p>
 	          </div>
 	          <div class="info phone">
 	            <h4>Phone</h4><p>82+ 10-4319-7701</p>

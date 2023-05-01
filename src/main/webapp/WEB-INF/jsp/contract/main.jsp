@@ -63,7 +63,7 @@
         </div>
         <!--/.bg-holder-->
 
-        <div class="bg-holder d-none d-xxl-block hero-bg" style="background-image:url(<%=request.getContextPath()%>/resources/assets/img/illustration/1.png);background-position:right top;background-size:contain;">
+        <div class="bg-holder d-none d-xxl-block hero-bg" style="background-image:url(<%=request.getContextPath()%>/resources/assets/img/illustration/2.png);background-position:right top;background-size:contain;">
         </div>
         <!--/.bg-holder-->
 		<form name="contractForm" id="contractForm">
@@ -78,7 +78,7 @@
 	              	<p class="contract_p" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">이름(Name)</p>
 	              	<div class="" style="display: flex;" data-zanim-trigger="scroll">
 	              		<input class="form-control" type="text" id="firstName" name="firstName" placeholder="First Name" data-zanim-trigger="scroll"/>
-	              		<input class="form-control" type="text" id="lastName" placeholder="Last Name" data-zanim-trigger="scroll"/>
+	              		<input class="form-control" type="text" id="lastName" name="lastName" placeholder="Last Name" data-zanim-trigger="scroll"/>
 	              	</div>
 	              	<p class="contract_p" data-zanim-xs='{"delay":0.5}' data-zanim-trigger="scroll">메세지(Message)</p>
 	              	<textarea type="text" style="width: 100%; height:100px;margin-bottom:20px;"id="message" name="message" data-zanim-trigger="scroll"></textarea>

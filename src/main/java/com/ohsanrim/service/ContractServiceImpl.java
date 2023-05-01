@@ -1,5 +1,7 @@
 package com.ohsanrim.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +15,10 @@ public class ContractServiceImpl {
 	
 	public Contract save(Contract contract) {
 		return contractRepository.save(contract);
+	}
+
+	public List<Contract> getAll() {
+		// TODO Auto-generated method stub
+		return contractRepository.findAll();
 	}
 }
