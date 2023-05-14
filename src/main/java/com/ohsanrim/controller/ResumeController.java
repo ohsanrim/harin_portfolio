@@ -29,8 +29,12 @@ public class ResumeController {
 	
 	@GetMapping(value = "getAllByType/{type}")
 	public ResponseEntity<List<Resume>> getAllByType(@PathVariable("type") String type) {
-		System.out.println("enter getAllByType...");
-		return new ResponseEntity<List<Resume>>(resumeService.getAllByType(type), HttpStatus.OK);
+		System.out.println("enter getAllByType..."+type);
+		List<Resume> list = resumeService.getAllByType(type);
+		for(Resume Resume: list) {
+			System.out.println(Resume.toString());
+		}
+		return new ResponseEntity<List<Resume>>(list, HttpStatus.OK);
 		
 	}
 	

@@ -252,6 +252,7 @@ h1, h2, h3, h4, h5, h6 {
 				$(data).each(function(index, list) {
 					var startDayByFormat = dateFormat(new Date(list.startDay));
 					var endDayByFormat = dateFormat(new Date(list.endDay));
+					console.log(list.title);
 					var data = '<div class="resume_wrapper"><div class="resume_year">'+startDayByFormat+'<br/>~ '+endDayByFormat+'</div><div class="resume_contents_wrapper"><div class="resume_title"><h4>'+list.title+'</h4></div><div class="resume_description">'+list.description+'</div></div></div>';
 					$('#education_box').append(data);
 				});
